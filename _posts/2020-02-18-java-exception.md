@@ -1,12 +1,12 @@
 ---
-layout:     post                    # 使用的布局（不需要改）
-title:      JAVA故障定位基础教程异常篇  # 标题 
-subtitle:   本文的定位故障定位的基础教程之异常篇，是指导在应对Java业务问题的异常日志时，能够掌握异常日志的内容含义，已经掌握常用的问题定位流程，指导问题分析。本文示例仅作为对流程的理解使用，其他有关数据库连接池的具体配置及使用问题可以查阅知识库，不在本文的涵盖的范围之内。 #副标题
-date:       2020-02-18              # 时间
-author:     Qiyibaba                # 作者
-header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
-catalog: true                       # 是否归档
-tags:                               #标签
+layout:     post                    
+title:      JAVA故障定位基础教程异常篇  
+subtitle:   本文的定位故障定位的基础教程之异常篇，是指导在应对Java业务问题的异常日志时，能够掌握异常日志的内容含义，已经掌握常用的问题定位流程，指导问题分析。本文示例仅作为对流程的理解使用，其他有关数据库连接池的具体配置及使用问题可以查阅知识库，不在本文的涵盖的范围之内。
+date:       2020-02-18             
+author:     Qiyibaba               
+header-img: img/post-bg-2015.jpg   
+catalog: true                     
+tags:                               
     - java
     - exception
 ---
