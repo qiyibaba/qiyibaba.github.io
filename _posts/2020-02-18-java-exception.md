@@ -20,7 +20,28 @@ tags:
 ### 异常堆栈
 
 ```
-java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)	at java.sql.DriverManager.getConnection(DriverManager.java:664)	at java.sql.DriverManager.getConnection(DriverManager.java:247)	at com.qiyibaba.jdbc.JdbcTest.main(JdbcTest.java:23)
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.qiyibaba.jdbc.JdbcTest.main(JdbcTest.java:23)
 ```
 
 ​	Java的方法在执行的时候是在虚拟机栈中执行的，每执行一个方法就会新建一个栈帧然后压入到虚拟机栈中。这是一个后进先出的结构，所以报错的时候也是从被调用者最开始报错，然后调用者依次报错，所以打印错误时的顺序也是报错的位置在最上面，调用者依次向后排。由此我们可以得出结论：上面报错，下面跟随。
@@ -101,7 +122,28 @@ try {
 ​	执行代码，得到如下结果：
 
 ```
-java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)	at java.sql.DriverManager.getConnection(DriverManager.java:664)	at java.sql.DriverManager.getConnection(DriverManager.java:247)	at com.qiyibaba.jdbc.JdbcTest.main(JdbcTest.java:23)
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.qiyibaba.jdbc.JdbcTest.main(JdbcTest.java:23)
 ```
 
 ​	该异常具体堆栈第二部分已经解析过，不再赘述。只要知道SQLException最为数据库异常最基础的异常类，很多时候，不管是JDBC驱动还是连接池，都会在默认情况下选择用标准的SQLException进行异常抛出。
@@ -115,7 +157,34 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 ​	下面演示一个驱动抛出异常的案例，其实案例1也是驱动抛出的异常，只是该异常使用的是JDK默认的SQLException抛出的。
 
 ```
-com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'lt'	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)	at com.mysql.jdbc.Util.getInstance(Util.java:383)	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)	at java.sql.DriverManager.getConnection(DriverManager.java:664)	at java.sql.DriverManager.getConnection(DriverManager.java:247)	at com.qiyibaba.jdbc.JdbcTest.main(JdbcTest.java:23)
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'lt'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.qiyibaba.jdbc.JdbcTest.main(JdbcTest.java:23)
 ```
 
 ​	我们现在知道抛出的异常是com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException，我们可以从几个方面确认该异常是与数据库相关的异常。
