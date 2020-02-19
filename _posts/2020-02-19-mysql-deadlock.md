@@ -4,7 +4,7 @@ title:      MySQL死锁日志分析
 subtitle:   死锁一般是事务相互等待对方资源，最后形成环路造成的。如何查看死锁日志，又如何分析死锁。
 date:       2020-02-19             
 author:     Qiyibaba               
-header-img: img/post-bg-2015.jpg   
+header-img: img/post-bg-202002.jpeg   
 catalog: true                     
 tags:                               
     - mysql
