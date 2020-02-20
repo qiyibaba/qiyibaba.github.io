@@ -1,6 +1,6 @@
 ---
 layout:     post                    
-title:      MySQL建表及存储内幕篇一  
+title:      MySQL建表及存储内幕上篇  
 subtitle:   MySQL建表的限制，如何选择行存储模式。
 date:       2020-02-20            
 author:     Qiyibaba               
