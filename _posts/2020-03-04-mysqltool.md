@@ -7,7 +7,6 @@ author:     Qiyibaba
 header-img: img/post-bg-202003.jpg   
 catalog: true                     
 tags:                               
-    - oracle
     - mysql
 ---
 
