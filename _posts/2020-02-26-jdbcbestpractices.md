@@ -4,7 +4,7 @@ title:     	MySQL JDBC使用最佳实践
 subtitle:   讲述jdbc中Loadbalance，prepare，fetchsize的使用
 date:       2020-02-26            
 author:     Qiyibaba               
-header-img: img/post-bg-202002.jpg   
+header-img: img/post-bg-202002.jpeg   
 catalog: true                     
 tags:                               
     - java

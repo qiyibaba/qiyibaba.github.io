@@ -4,7 +4,7 @@ title:     Oracle To MySQL语法改造
 subtitle:   本文是从oracle官方文档中提取的语法寻找对应的MySQL语法
 date:       2020-02-24            
 author:     Qiyibaba               
-header-img: img/post-bg-202002.jpg   
+header-img: img/post-bg-202002.jpeg   
 catalog: true                     
 tags:                               
     - oracle

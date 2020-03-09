@@ -4,7 +4,7 @@ title:     	innodb体系架构
 subtitle:   MySQL技术内幕 InnoDB存储引擎体系架构
 date:       2020-02-29            
 author:     Qiyibaba               
-header-img: img/post-bg-202002.jpg   
+header-img: img/post-bg-202002.jpeg   
 catalog: true                     
 tags:                               
     - mysql

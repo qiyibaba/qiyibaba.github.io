@@ -4,7 +4,7 @@ title:     	JDBC批量模式说明
 subtitle:   如何快速的预置数据，使用缓存，预编译，组合语句等各种条件下怎么选择
 date:       2020-02-27           
 author:     Qiyibaba               
-header-img: img/post-bg-202002.jpg   
+header-img: img/post-bg-202002.jpeg   
 catalog: true                     
 tags:                               
     - jdbc
