@@ -150,3 +150,8 @@ WHERE
 	AND ( 1- ( TABLE_ROWS * AVG_ROW_LENGTH ) / ( DATA_LENGTH + INDEX_LENGTH + DATA_FREE ) ) > 0.5 
 	AND ( DATA_LENGTH + INDEX_LENGTH + DATA_FREE ) > 1024 * 1024 * 1024;
 ```
+
+### 附：碎片清理需要磁盘空间
+由于碎片整理采用的是copy table的方式，所以会另外占用磁盘空间，需要在执行之前对主备机进行磁盘空间检测，确保磁盘空间足够，需要磁盘空间分2块：
+1.与原表ibd文件大小一样的空间
+2.innodb_online_alter_log_max_size配置大小的空间，默认128M，用来存放执行过程中的DML，如果业务并发很大，需修改该配置的大小，支持动态修改。
