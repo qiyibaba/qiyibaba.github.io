@@ -2,7 +2,7 @@
 layout:     post                    # 使用的布局（不需要改）
 title:      半年工作总结               # 
 subtitle:   记OceanBase工作半年记
-date:       2021-09-30              # 时间
+date:       2020-09-30              # 时间
 author:     Qiyibaba                # 作者
 header-img: img/post-bg-202002.jpeg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
