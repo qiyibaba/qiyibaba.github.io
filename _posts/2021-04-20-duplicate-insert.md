@@ -11,7 +11,6 @@ tags:                               #标签
     - insert ignore
 ---
 
-## Hey
 测试脚本：
 ```
 date;echo {1..500} | xargs -n 1 -P 50 /bin/sh -c "mysql -uroot -proot -e 'xxxxxxxxx' 1>/dev/null 2>/dev/null";date
